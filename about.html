@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <link rel="icon" type="image/png" href="pfavicon-16x16.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rólunk - PSTP Főmérnök KFT.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <img src="logo.gif" alt="PSTP Főmérnök KFT. Logó" style="height: 50px; vertical-align: middle;">
+    <h1>PSTP Főmérnök KFT.</h1>
+    <nav>
+        <a href="index.html">Főoldal</a>
+        <a href="about.html">Rólunk</a>
+        <a href="services.html">Szolgáltatások</a>
+        <a href="contact.html">Kapcsolat</a>
+    </nav>
+</header>
+
+<main>
+    <section id="about-us">
+        <label id="darkModeLabel">
+            <input type="checkbox" id="darkModeToggle"> Sötét Mód
+        </label>
+        <h2>Kik vagyunk mi?</h2>
+        <p>A PSTP Főmérnök KFT. egy tapasztalt, magyar mérnöki iroda. Fő fókuszunk a minőségi tervezés, szakértés és műszaki ellenőrzés. Hisszük, hogy a stabil alapok és a precíz kivitelezés elengedhetetlenek minden sikeres projekt számára.</p>
+        
+        <h3>Mérnöki hitvallásunk</h3>
+        <p>Küldetésünk, hogy partnereinknek ne csak terveket, hanem **valódi, megbízható megoldásokat** adjunk. Az épületek élete a tervezőasztalon kezdődik – mi garantáljuk, hogy ez a kezdet a lehető legerősebb legyen.</p>
+        
+        <a href="contact.html" class="cta-button">Ismerje meg a mérnökünket!</a>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025. PSTP Főmérnök KFT. Minden jog fenntartva.</p>
+</footer>
+
+<script>
+    const toggle = document.getElementById('darkModeToggle');
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+        if (toggle.checked) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+</script>
+
+</body>
+</html>

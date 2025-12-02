@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <link rel="icon" type="image/png" href="pfavicon-16x16.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szolgáltatások - PSTP Főmérnök KFT.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <img src="logo.gif" alt="PSTP Főmérnök KFT. Logó" style="height: 50px; vertical-align: middle;">
+    <h1>PSTP Főmérnök KFT.</h1>
+    <nav>
+        <a href="index.html">Főoldal</a>
+        <a href="about.html">Rólunk</a>
+        <a href="services.html">Szolgáltatások</a>
+        <a href="contact.html">Kapcsolat</a>
+    </nav>
+</header>
+
+<main>
+    <section id="services-full">
+        <label id="darkModeLabel">
+            <input type="checkbox" id="darkModeToggle"> Sötét Mód
+        </label>
+        <h2>Részletes Szolgáltatásaink</h2>
+        <p>Tapasztalt mérnökeink teljes körű építőipari szolgáltatásokat nyújtanak, a kezdeti tervezéstől a megvalósítás ellenőrzéséig.</p>
+        
+        <div class="service-item">
+            <h3>Tervezés (Építészeti, Statikai, Generáltervezés)</h3>
+            <p>Vállaljuk családi házak, társasházak és ipari létesítmények teljes körű építészeti és statikai tervezését, valamint generáltervezési feladatok koordinálását. Gondoskodunk az engedélyeztetési tervek elkészítéséről és a hatóságokkal való kapcsolattartásról.</p>
+            <ul>
+                <li>Építészeti tervek</li>
+                <li>Statikai számítások és tervek</li>
+                <li>Generáltervezési koordináció</li>
+            </ul>
+        </div>
+
+        <div class="service-item">
+            <h3>Szakértés és Állapotfelvétel</h3>
+            <p>Szakszerű állapotfelvételt készítünk meglévő épületekről, valamint műszaki és statikai szakvéleményeket nyújtunk vásárlás előtti vizsgálatokhoz vagy felújítási projektekhez. Segítünk a hibák okainak feltárásában.</p>
+            <ul>
+                <li>Szakvélemények készítése</li>
+                <li>Műszaki állapotfelmérés</li>
+                <li>Statikai szakértés</li>
+            </ul>
+        </div>
+
+        <div class="service-item">
+            <h3>Energia Tanúsítvány készítés</h3>
+            <p>Gyors és megbízható energetikai tanúsítványt állítunk ki ingatlan adás-vételhez, bérbeadáshoz vagy pályázatokhoz. Tanácsot adunk az energiahatékonyság növeléséhez szükséges felújítási lépésekről.</p>
+            <ul>
+                <li>Lakóingatlanok és üzlethelyiségek</li>
+                <li>Pályázati energetikai számítások</li>
+            </ul>
+        </div>
+        
+        <div class="service-item">
+            <h3>Műszaki Vezetés és Ellenőrzés</h3>
+            <p>A sikeres projektzárás érdekében vállaljuk a műszaki vezetői és műszaki ellenőri feladatokat, biztosítva a terveknek és a jogszabályoknak megfelelő kivitelezést.</p>
+        </div>
+
+        <a href="contact.html" class="cta-button">Kérjen árajánlatot!</a>
+
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025. PSTP Főmérnök KFT. Minden jog fenntartva.</p>
+</footer>
+
+<script>
+    // Sötét Mód Script
+    const toggle = document.getElementById('darkModeToggle');
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+        if (toggle.checked) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+</script>
+
+</body>
+</html>

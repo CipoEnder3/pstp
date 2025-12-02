@@ -1,0 +1,287 @@
+/* styles.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333; /* Default text color */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode specific body styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+}
+
+/* Header Styles (Unified for all pages) */
+header {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 5px solid #FFD700; /* Kiemelés */
+}
+
+header h1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    font-size: 1.8em;
+}
+
+header img {
+    max-width: 100%;
+    height: 50px;
+    vertical-align: middle;
+}
+
+nav {
+    margin-top: 10px;
+    padding-bottom: 5px;
+    /* Aktív menüpont kiemelése */
+}
+nav a.active {
+    color: #FFD700; /* Arany szín */
+    border-bottom: 3px solid #FFD700;
+}
+nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #FFD700; /* Arany szín on hover */
+    border-bottom: 2px solid #FFD700;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Dark Mode specific main styles */
+body.dark-mode main {
+    background: #2c2c2c;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+h2, h3 {
+    color: #007BFF; 
+    transition: color 0.3s;
+}
+
+body.dark-mode h2, body.dark-mode h3 {
+    color: #FFD700; 
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+section:last-child {
+    border-bottom: none;
+}
+
+body.dark-mode section {
+    border-bottom: 1px solid #444;
+}
+
+/* CTA Button Style (Egységes Stílus) */
+.cta-button {
+    display: inline-block;
+    background-color: #28a745; /* Zöld szín */
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+}
+
+
+/* --- Szolgáltatások Oldal Stílusai --- */
+.service-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+body.dark-mode .service-item {
+    background-color: #3a3a3a;
+    border-color: #555;
+}
+
+.service-item ul {
+    padding-left: 20px;
+}
+
+/* --- Kapcsolat Oldal Stílusai --- */
+.contact-form-container, .contact-info, .map-container {
+    margin-bottom: 30px;
+    padding: 10px 0;
+}
+
+/* Kapcsolat Űrlap Stílusai */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-top: 10px;
+    width: 50px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: #444;
+    border-color: #666;
+    color: #fff;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Térkép Iframe Stílus */
+.map-container iframe {
+    border-radius: 8px;
+    display: block; /* Eltávolítja az alatta lévő extra helyet */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #007BFF;
+    color: #fff;
+    font-size: 0.9em;
+}
+
+body.dark-mode footer {
+    background: #007BFF;
+}
+
+/* Dark Mode Toggle Visuals */
+section label {
+    display: block;
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+/* --- SÖTÉT MÓD KAPCSOLÓ STÍLUS --- */
+
+/* 1. A label konténer (ez a kattintható terület) */
+section label {
+    /* Felülírja a korábbi stílust: flex-szel rendezzük a szöveget és a kapcsolót */
+    display: flex;
+    justify-content: flex-end; /* Jobbra igazítás */
+    align-items: center;
+    position: relative; /* Fontos a belső gomb pozicionálásához */
+    cursor: pointer;
+    font-size: 0.9em;
+    padding-right: 50px; /* Helyet hagy a kapcsoló vizuális elemének */
+    margin-bottom: 10px;
+}
+
+/* A szöveg színe fixálva (függetlenül attól, hogy dark-mode van-e) */
+body section label {
+    color: #333; 
+}
+body.dark-mode section label {
+    color: #f4f4f4;
+}
+
+/* 2. Az alap checkbox elrejtése */
+#darkModeToggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute; 
+}
+
+/* 3. A kapcsoló sín (track) - A label ::before pszeudo-elemére rajzoljuk */
+#darkModeLabel::before {
+    content: '';
+    position: absolute;
+    right: 0; /* Kezdő pozíció a label jobb szélén */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; 
+    height: 20px; 
+    background-color: #777; /* Kikapcsolt állapot (szürke) */
+    border-radius: 10px;
+    transition: background-color 0.4s;
+}
+
+/* 4. A mozgó gomb (slider ball) */
+#darkModeLabel::after {
+    content: '';
+    position: absolute;
+    right: 22px; /* Kikapcsolt, bal oldali pozíció a sínen (40px sín - 16px gomb/2 + margó) */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px; 
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    transition: right 0.4s, background-color 0.4s;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
+/* 5. BEKAPCSOLT ÁLLAPOT (A JavaScript által a body-ra adott dark-mode class aktiválja) */
+
+/* Változtassuk a sín színét */
+body.dark-mode #darkModeLabel::before {
+    background-color: #007BFF; /* Bekapcsolt (kék) szín */
+}
+
+/* Mozgassuk a gombot jobbra */
+body.dark-mode #darkModeLabel::after {
+    right: 2px; /* Elmozdítás jobbra (bekapcsolás) */
+    background-color: #FFD700; /* Arany gomb szín sötét módban */
+}
